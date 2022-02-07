@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const announcer = document.querySelector('.announcer');
     const title = document.querySelector('.display');
 
-    let board = ['', '', '', '', '', '', '', '', ''];
+    let board = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
     let currentPlayer = 'X';
     let isGameActive = true;
 
@@ -17,33 +17,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /*
         Indexes within the board
-        [0] [1] [2]
-        [3] [4] [5]
-        [6] [7] [8]
+        [ 0] [ 1]  [ 2] [ 3]
+        [ 4] [ 5]  [ 6] [ 7]
+        [ 8] [ 9]  [10] [11]
+        [12] [13]  [14] [15]
     */
 
     const winningConditions = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
+        [0, 1, 2, 3],
+        [4, 5, 6, 7],
+        [8, 9, 10, 11],
+        [12,13,14,15],
+        [0, 4, 8, 12],
+        [1, 5, 9, 13],
+        [2, 6, 10, 14],
+        [3, 7, 11, 15],
+        [0, 5, 10, 15],
+        [3, 6, 9, 12]
+
     ];
 
     function handleResultValidation() {
         let roundWon = false;
-        for (let i = 0; i <= 7; i++) {
+        for (let i = 0; i <= 9; i++) {
             const winCondition = winningConditions[i];
             const a = board[winCondition[0]];
             const b = board[winCondition[1]];
             const c = board[winCondition[2]];
-            if (a === '' || b === '' || c === '') {
+            const d = board[winCondition[3]];
+            if (a === '' || b === '' || c === '' || d === '') {
                 continue;
             }
-            if (a === b && b === c) {
+            if (a === b && b === c && c === d) {
                 roundWon = true;
                 break;
             }
@@ -69,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 announcer.innerHTML = 'Gracz <span class="playerX">X</span> wygrał!! ;ooo';
                 break;
             case TIE:
-                announcer.innerText = 'Remis ;((';
+                announcer.innerText = 'Remis ;((';   
         }
         announcer.classList.remove('hide');
         title.classList.add('hide');
@@ -106,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const resetBoard = () => {
         
-        board = ['', '', '', '', '', '', '', '', ''];
+        board = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
         isGameActive = true;
         announcer.classList.add('hide');
         title.classList.remove('hide');
