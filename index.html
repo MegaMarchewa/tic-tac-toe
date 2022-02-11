@@ -16,10 +16,19 @@
         <section class="title">
             <h1>Krystian Burbano-Marek <br>Tic Tac Toe</h1>
         </section>
-        <section class="display">
+        <div id="menu" class="display">
+            <h3 id="headerInfo">Jak dużą planszę chcesz stworzyć?</h3>
+            <h4>NxN</h4>
+            <h4>N=
+            <input id="input" style="max-width: 30px;" maxlength="1" type="text"></h4>
+            <input type="button" id="inputButton" value="Graj!">
+            <!-- <button id="input">Graj</button> -->
+        </div>
+        <div id="turn" class="display hide">
             Kolej gracza <span class="display-player playerX">X</span>..
-        </section>
-        <section class="container">
+        </div>
+        <div id="board" class="container">
+            <!-- <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -34,13 +43,12 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </section>
-        <section class="display announcer hide"></section>
-        <section class="controls">
+            <div class="tile"></div> -->
+        </div>
+        <div class="display announcer hide"></div>
+        <div class="controls">
             <button id="reset">Restart</button>
-        </section>
+        </div>
     </main>
 </body>
 </html>

@@ -9,8 +9,11 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
 }
-
 /* .background {
     background-color: #bea5df;
     padding-top: 1px;
@@ -18,6 +21,7 @@ body{
 
 .title {
     color: rgb(255, 7, 201);
+    background-color: black;
     text-align: center;
     font-size: 40px;
     margin-top: 10%;
@@ -38,17 +42,18 @@ body{
 .container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-    max-width: 400px;
+    /* grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%; */
+    width: 400px;
+    height: 400px;
     
 
 }
 
 .tile {
     border: 1px solid white;
-    min-width: 100px;
-    min-height: 100px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +65,9 @@ body{
     -o-background-size: cover;
     background-size: cover;
 }
-
+.kot-wygrana {
+    background-image: url('assets/img/cat_background.jpg') !important;
+}
 .playerX {
     color: pink;
 }
@@ -94,3 +101,4 @@ body{
 #reset {
     background-color: red;
 }
+
